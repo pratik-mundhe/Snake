@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Snake</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      background-color: black;
+    }
+
+    #game-board {
+      background-color: rgb(68, 66, 66);
+      width: 100vmin;
+      height: 100vmin;
+      display: grid;
+      grid-template-rows: repeat(21, 1fr);
+      grid-template-columns: repeat(21, 1fr);
+    }
+
+    .snake {
+      background-color: rgba(255, 255, 255, 1);
+      border: .2vmin solid rgb(114, 114, 114);
+    }
+
+    .food {
+      background-color: rgb(0, 255, 0);
+    }
+
+    #game-over-message {
+      /* display: none; */
+      font-family: 'Bungee', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(255, 255, 255, 0.9);
+      font-size: 5em;
+      color: rgb(255, 10, 10);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .large {
+      font-size: 1.4em;
+      margin-top: -1.2em;
+    }
+  </style>
+  <script src="game.js" defer type="module"></script>
+</head>
+<body>
+  <div id="game-board"></div>
+  <div id="game-over-message">
+      Game
+      <div class="large">
+        Over
+      </div>
+  </div>
+</body>
+</html>
